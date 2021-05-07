@@ -13,9 +13,26 @@ namespace Bake.Models
       _price = breadPrice;
     }
 
-    public int GetBreadPrice()
+    public int GetBreadPrice(string breadCount)
     {
-      return _price;
+      int intCount = Int32.Parse(breadCount);
+      bool breadBool = bool MultipleOf(int intCount)
+        {
+          return (intCount % 3) == 0;
+        }
+      if (intCount >= 2) 
+      {
+        
+        if (MultipleOf)
+        {
+        int breadPrice = (intCount * 5)-((intCount*5)*(1/3));
+        }
+        }
+      else 
+      {
+        int breadPrice = intCount*5;
+      }
+      return breadPrice;
     }
     // public int Count { get; set }
     // private static Int Count _count = new Int Count
