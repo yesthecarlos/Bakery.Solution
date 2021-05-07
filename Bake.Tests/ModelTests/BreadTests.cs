@@ -8,10 +8,11 @@ namespace Bake.Test
   public class BreadTests
   {
     [TestMethod]
-    public void GetBreadCount_ReturnsBreadCount_int()
+    public void GetOrderPrice_ReturnsOrderPrice_int()
     {
     //Arrange
-    int count = 3;
+    int breadCount = 1;
+    int pastryCount = 1;
     //Act
     int result = Bread.Count;
     //Assert
