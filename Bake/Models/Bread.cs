@@ -13,7 +13,7 @@ namespace Bake.Models
       _price = breadPrice;
     }
 
-    public int getBreadPrice()
+    public int GetBreadPrice()
     {
       return _price;
     }

@@ -8,15 +8,18 @@ namespace Bake.Test
   public class BreadTests
   {
     [TestMethod]
-    public void GetOrderPrice_ReturnsOrderPrice_int()
+    public void GetBreadPrice_ReturnsBreadPrice_Int()
     {
-    //Arrange
-    int breadCount = 1;
-    int pastryCount = 1;
-    //Act
-    int result = Bread.Count;
-    //Assert
-    Assert.AreEqual(count, result);
+      //Arrange
+      string breadCount = "1";
+      int breadPrice = 5;
+      Bread newBread = new Bread(breadCount, breadPrice);
+      
+      //Act
+      int result = newBread.GetBreadPrice();
+      
+      //Assert
+      Assert.AreEqual(breadPrice, result);
     }
     
   }
