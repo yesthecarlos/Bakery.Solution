@@ -4,14 +4,21 @@ namespace Bake.Models
 {
   public class Bread
   {
-    public int Count { get; set };
-    private static int _price = new int{}; 
-    
-    public BreadPrice(int count)
-    {
-      Count = count;
+    private string _count;
+    private int _price;
 
+    public Bread(string breadCount, int breadPrice)
+    {
+      _count = breadCount;
+      _price = breadPrice;
     }
+
+    public int getBreadPrice()
+    {
+      return _price;
+    }
+    // public int Count { get; set }
+    // private static Int Count _count = new Int Count
 
   }
 }
