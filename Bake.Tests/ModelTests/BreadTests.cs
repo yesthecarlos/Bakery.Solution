@@ -8,9 +8,15 @@ namespace Bake.Test
   public class BreadTests
   {
     [TestMethod]
-    public void 
+    public void GetBreadCount_ReturnsBreadCount_int()
+    {
     //Arrange
+    int count = 3;
     //Act
+    int result = Bread.Count;
     //Assert
+    Assert.AreEqual(count, result);
+    }
+    
   }
 }
