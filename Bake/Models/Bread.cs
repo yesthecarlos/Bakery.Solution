@@ -16,18 +16,18 @@ namespace Bake.Models
     public int GetBreadPrice(string breadCount)
     {
       int intCount = Int32.Parse(breadCount);
-      bool breadBool = bool MultipleOf(int intCount)
+      Console.WriteLine(intCount);
+      bool breadBool = MultipleOf(intCount)
         {
           return (intCount % 3) == 0;
-        }
+        };
       if (intCount >= 2) 
       {
-        
-        if (MultipleOf)
+        if (breadBool)
         {
-        int breadPrice = (intCount * 5)-((intCount*5)*(1/3));
+          int breadPrice = (intCount * 5)-((intCount*5)*(1/3));
         }
-        }
+      }
       else 
       {
         int breadPrice = intCount*5;
