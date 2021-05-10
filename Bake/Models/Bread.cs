@@ -24,7 +24,6 @@ namespace Bake.Models
         if (breadBool)
         {
           breadPrice = ((intCount*5)) - ((intCount*5)/3);
-          Console.WriteLine("intcount2orover:" + breadPrice);
         }
         else 
         {
