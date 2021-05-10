@@ -11,12 +11,12 @@ namespace Bake.Test
     public void GetBreadPrice_ReturnsBreadPrice_Int()
     {
       //Arrange
-      string breadCount = "1";
-      int breadPrice = 5;
+      string breadCount = "5";
+      int breadPrice = 20;
       Bread newBread = new Bread(breadCount, breadPrice);
       
       //Act
-      int result = newBread.GetBreadPrice();
+      int result = newBread.GetBreadPrice(breadCount);
       
       //Assert
       Assert.AreEqual(breadPrice, result);
