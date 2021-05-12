@@ -27,12 +27,7 @@ namespace Bake.Models
         }
         else 
         {
-        // Console.WriteLine(intCount);
-        decimal intCountDivSix = intCount * (1 / 6);
-        Console.WriteLine(intCountDivSix);
-        double pastryNearestInt = (double) Math.Ceiling(intCountDivSix);
-        Console.WriteLine(pastryNearestInt);
-        pastryPrice = ((intCount * 2) - (int)pastryNearestInt);
+        pastryPrice = ((intCount * 2) - (int)Math.Ceiling((decimal)intCount/6));
         }
       }
       else 
