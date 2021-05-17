@@ -4,21 +4,29 @@ namespace Bake.Models
 {
   public class Bread
   {
-    private string _count;
-    private int _price;
+    public string BreadTotalCount { get; set; }
+    public int BreadUnitPrice { get; set; }
+    public int BreadTotalPrice { get; set; }
 
-    public Bread(string breadCount, int breadPrice)
+    public Bread(string breadCount)
     {
-      _count = breadCount;
-      _price = breadPrice;
+      BreadTotalCount = breadCount;
+      BreadUnitPrice = 5;
+      BreadTotalPrice = 0;
+    }
+
+    public int StraightBreadPrice(string breadCount)
+    {
+      int intCount = Int32.Parse(breadCount);
+      BreadTotalPrice = intCount * BreadUnitPrice;
+      return BreadTotalPrice;
     }
 
     public int GetBreadPrice(string breadCount)
     {
       int intCount = Int32.Parse(breadCount);
-      ;
       bool breadBool = intCount % 3 == 0;
-      int breadPrice;
+      int breadPrice = BreadTotalPrice;
       if (intCount >= 2) 
       {
         if (breadBool)
@@ -36,8 +44,5 @@ namespace Bake.Models
       }
       return breadPrice;
     }
-    // public int Count { get; set }
-    // private static Int Count _count = new Int Count
-
   }
 }

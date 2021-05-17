@@ -8,19 +8,33 @@ namespace Bake.Test
   public class PastryTests
   {
     [TestMethod]
-    public void GetPastryPrice_ReturnsPastryPrice_Int()
+    public void PastryConstructor_CreatesInstanceOfPastry_Pastry()
     {
-      //Arrange
-      string pastryCount = "4";
-      int pastryPrice = 7;
-      Pastry newPastry = new Pastry(pastryCount, pastryPrice);
+      Pastry newPastry = new Pastry("1");
+
+      Assert.AreEqual(typeof(Pastry), newPastry.GetType());
+    }
+    [TestMethod]
+    public void StraightPastryPrice_ReturnsUndiscountedPastryPrice_Int()
+    {
+      string pastryCount = "3";
+      int pastryPrice = 6;
+      Pastry newPastry = new Pastry(pastryCount);
+
+      int result = newPastry.StraightPastryPrice(pastryCount);
       
-      //Act
-      int result = newPastry.GetPastryPrice(pastryCount);
-      
-      //Assert
       Assert.AreEqual(pastryPrice, result);
     }
-    
+    [TestMethod]
+    public void GetPastryPrice_ReturnsDiscountedPastryPrice_Int()
+    {
+      string pastryCount = "4";
+      int pastryPrice = 7;
+      Pastry newPastry = new Pastry(pastryCount);
+      
+      int result = newPastry.GetPastryPrice(pastryCount);
+      
+      Assert.AreEqual(pastryPrice, result);
+    }
   }
 }

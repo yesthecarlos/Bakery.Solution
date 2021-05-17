@@ -4,19 +4,27 @@ namespace Bake.Models
 {
   public class Pastry
   {
-    private string _count;
-    private int _price;
+    public string PastryTotalCount { get; set; }
+    public int PastryUnitPrice { get; set; }
+    public int PastryTotalPrice { get; set; }
 
-    public Pastry(string pastryCount, int pastryPrice)
+    public Pastry(string pastryCount)
     {
-      _count = pastryCount;
-      _price = pastryPrice;
+      PastryTotalCount = pastryCount;
+      PastryUnitPrice = 2;
+      PastryTotalPrice = 0;
+    }
+
+    public int StraightPastryPrice(string pastryCount)
+    {
+      int intCount = Int32.Parse(pastryCount);
+      PastryTotalPrice = intCount * PastryUnitPrice;
+      return PastryTotalPrice;
     }
 
     public int GetPastryPrice(string pastryCount)
     {
       int intCount = Int32.Parse(pastryCount);
-      ;
       bool pastryBool = intCount % 3 == 0;
       int pastryPrice;
       if (intCount >= 3) 
